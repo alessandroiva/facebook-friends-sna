@@ -1,32 +1,39 @@
 # Facebook Friends Social Network Analysis (SNA)
 
-This repository contains the code and resources for conducting Social Network Analysis (SNA) on Facebook friends data.
+This repository contains a modular implementation of Social Network Analysis (SNA) on Facebook friends data.
 
 ## Overview
 
-This project aims to analyze the social network of Facebook friends using various SNA techniques and metrics. The analysis is performed using a dataset of Facebook friends, focusing on identifying key nodes, understanding network structure, and visualizing connections.
+This project analyzes social networks using various SNA techniques: centrality measures, community detection, PageRank, link prediction, and diffusion models.
 
-## Files
+## 📁 Repository Structure
 
-- `SNA Report.ipynb`: Jupyter Notebook containing the analysis and visualizations.
-- `facebook_description.txt`: Description of the dataset.
-- `facebook_edges.txt`: Edge list representing the connections between friends.
+- **`src/`**: Modular analysis components
+  - `data_loader.py`: Graph loading and subgraph extraction
+  - `metrics.py`: Basic metrics, transitivity, betweenness centrality
+  - `pagerank.py`: Custom PageRank implementation
+  - `communities.py`: Community detection algorithms
+  - `link_prediction.py`: Similarity indices (CN, JI, PA, AA, RA)
+  - `diffusion.py`: Independent Cascade Model (ICM)
+- **`data/`**: Dataset files (`facebook_edges.txt`, description)
+- **`notebooks/`**: Original Jupyter Notebook
+- **`main.py`**: Main execution script
 
-## Getting Started
+## 🚀 Usage
 
-### Prerequisites
+1. Install dependencies:
+   ```bash
+   pip install networkx pandas numpy matplotlib scikit-learn
+   ```
+2. Run the full analysis pipeline:
+   ```bash
+   python main.py
+   ```
 
-- Python 3.x
-- Jupyter Notebook
-- NetworkX
-- Matplotlib
-- Pandas
+## 📊 Analysis Features
 
-### Analysis
-
-The analysis includes:
-
-	•	Calculation of centrality measures (degree, betweenness, closeness).
-	•	Community detection. 
-	•	Implementation of several custom algorithms (e.g PageRank)
-
+- Calculation of centrality measures (degree, betweenness, closeness)
+- Community detection (Bridge Removal, Modularity Optimization, Label Propagation)
+- Custom PageRank algorithm implementation
+- Link prediction using topological similarity
+- Information diffusion modeling (ICM)
